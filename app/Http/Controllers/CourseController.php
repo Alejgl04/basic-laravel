@@ -21,6 +21,13 @@ class CourseController extends Controller
   }
 
   public function store(Request $data){
+
+    $data->validate([
+      'name' => 'required',
+      'description' => 'required',
+      'categorys' => 'required'
+    ]);
+
     $course = new Course();
     $course->name        = $data->name;
     $course->description = $data->description;
@@ -40,6 +47,11 @@ class CourseController extends Controller
   }
 
   public function update(Request $data, Course $course) {
+    $data->validate([
+      'name' => 'required',
+      'description' => 'required',
+      'categorys' => 'required'
+    ]);
     $course->name = $data->name;
     $course->description = $data->description;
     $course->categorys = $data->categorys;

@@ -15,13 +15,21 @@
                 <div class="grid grid-cols-6 gap-6">
                   <div class="col-span-6 sm:col-span-3">
                     <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                    <input type="text" name="name" id="name" value="{{$course->name}}" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" name="name" id="name" value="{{old('name', $course->name)}}" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    @error('name')
+                      <small class="error-message">*{{$message}}</small>
+                    @enderror
                     
                     <label for="description" class="block text-sm font-medium text-gray-700 mt-2">Descripción</label>
-                    <textarea name="description" id="description" cols="30" rows="10" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">{{$course->description}}</textarea>
-  
+                    <textarea name="description" id="description" cols="30" rows="10" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">{{old('description', $course->description)}}</textarea>
+                    @error('description')
+                      <small class="error-message">*{{$message}}</small>
+                    @enderror
                     <label for="category" class="block mt-2 text-sm font-medium text-gray-700">Categoría</label>
-                    <input type="text" name="categorys" id="categorys" value="{{$course->categorys}}" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" name="categorys" id="categorys" value="{{old('categorys', $course->categorys)}}" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    @error('categorys')
+                      <small class="error-message">*{{$message}}</small>
+                    @enderror
                   </div>
                   <div class="md:col-span-3">
                     <div class="px-4 sm:px-0">

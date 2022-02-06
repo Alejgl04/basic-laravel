@@ -14,13 +14,22 @@
                 <div class="grid grid-cols-6 gap-6">
                   <div class="col-span-6 sm:col-span-3">
                     <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                    <input type="text" name="name" id="name" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    
+                    <input type="text" name="name" id="name" autocomplete="given-name" value="{{old('name')}}" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    @error('name')
+                      <small class="error-message">*{{$message}}</small>
+                    @enderror
+
                     <label for="description" class="block text-sm font-medium text-gray-700 mt-2">Descripción</label>
-                    <textarea name="description" id="description" cols="30" rows="10" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
-  
+                    <textarea name="description" id="description" cols="30" rows="10" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">{{old('description')}}</textarea>
+                    @error('description')
+                    <small class="error-message">*{{$message}}</small>
+                    @enderror
+
                     <label for="category" class="block mt-2 text-sm font-medium text-gray-700">Categoría</label>
-                    <input type="text" name="categorys" id="categorys" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" name="categorys" id="categorys" value="{{old('categorys')}}" autocomplete="given-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    @error('categorys')
+                    <small class="error-message">*{{$message}}</small>
+                    @enderror
                   </div>
                   <div class="md:col-span-3">
                     <div class="px-4 sm:px-0">
@@ -36,6 +45,7 @@
                 <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   Enviar
                 </button>
+                <a class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{route('courses.index')}}">Volver</a>
               </div>
             </div>
           </form>
