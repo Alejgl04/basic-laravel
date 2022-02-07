@@ -10,9 +10,14 @@
       .error-message {
         color: red;
       }
+      .active {
+        color: red!important;
+        font-weight: bold;
+      }
     </style>
 </head>
 <body class="px-6">
+  @include('layouts/partials/header')
   @yield('content')
 </body>
 </html>

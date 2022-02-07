@@ -17,7 +17,7 @@
   <ul class="list-group ">
     @foreach ($courses as $course)
       <li>
-        - <a href="{{route('courses.show',$course->id)}}" class="underline"> {{ $course->name }}</a>
+        - <a href="{{route('courses.show',$course)}}" class="underline"> {{ $course->name }}</a>
       </li>
     @endforeach
   </ul>
