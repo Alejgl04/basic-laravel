@@ -29,3 +29,5 @@ Route::get('courses/{course}/edit', [CourseController::class, 'edit'])->name('co
 
 Route::put('courses/{course}', [CourseController::class, 'update'])->name('courses.update');
 
+Route::delete('courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
+

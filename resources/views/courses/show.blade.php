@@ -53,7 +53,12 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                   <a class="text-sky-400 font-bold py-8 underline" href="{{route('courses.index')}}">Volver</a>
                   <a class="text-sky-400 font-bold py-8 underline" href="{{route('courses.edit', $course)}}">Editar</a>
-
+                  <form action="{{route('courses.destroy',$course)}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Eliminar
+                    </button>
+                  </form>
                 </td>
               </tr>
 
