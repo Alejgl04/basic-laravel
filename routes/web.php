@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,10 @@ Route::get('/', HomeController::class)->name('home');
 Route::resource('courses', CourseController::class);
 
 Route::view('nosotros','us')->name('us');
+
+Route::get('contactus', [ContactController::class, 'index'])->name('contactus.index');
+
+Route::post('contactus', [ContactController::class, 'store'])->name('contactus.store');
 // Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
 // Route::get('courses/create', [CourseController::class, 'create'])->name('courses.create');
 // Route::post("courses", [CourseController::class, 'store'])->name('courses.store');

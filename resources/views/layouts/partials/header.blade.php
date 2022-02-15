@@ -4,10 +4,14 @@
       <li class="mr-2">
         <a href="{{ route('home') }}" class="{{request()->routeIs('home') ? 'active' : ''}} text-sm text-gray-700 dark:text-gray-500 underline">Inicio</a>
       </li>
+
       <li class="mr-2">
         <a href="{{route('courses.index')}}" class="{{request()->routeIs('courses.*') ? 'active' : ''}} text-sm text-gray-700 dark:text-gray-500 underline">Cursos</a>
       </li>
-      <li><a href="{{route('us')}}" class="{{request()->routeIs('us') ? 'active' : ''}} text-sm text-gray-700 dark:text-gray-500 underline">Sobre Nosotros</a></li>
+
+      <li class="mr-2"><a href="{{route('us')}}" class="{{request()->routeIs('us') ? 'active' : ''}} text-sm text-gray-700 dark:text-gray-500 underline">Sobre Nosotros</a></li>
+
+      <li><a href="{{route('contactus.index')}}" class="{{request()->routeIs('contactus.index') ? 'active' : ''}} text-sm text-gray-700 dark:text-gray-500 underline">Contáctanos</a></li>
     </ul>
   </nav>
 </header>
